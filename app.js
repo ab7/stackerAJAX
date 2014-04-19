@@ -130,14 +130,16 @@ $(function () {
 		// get the value of the tags the user submitted
 		var tags = $(this).find("input[name='tags']").val();
 		getUnanswered(tags);
+        $('input[type="text"').val("");
 	});
     $('.inspiration-getter').submit(function () {
         var tag, period;
 		// zero out results if previous search has run
 		$('.results').html('');
-		// get the value of the tag the user submitted
+		// get the value of the tag and period the user submitted
 		tag = $(this).find("input[name='answerers']").val();
         period = $("input[name='period']:checked").val();
 		getTopAnswerers(tag, period);
+        $('input[type="text"').val("");
     });
 });
